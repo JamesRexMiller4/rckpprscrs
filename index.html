@@ -7,17 +7,14 @@
 </head>
 <body>
     <script> 
-
+    
         function computerPlay() {
-            var selection = ["Rock", "Paper", "Scissors"];
-            var index = Math.floor(Math.random() * 3 );
-            selection = selection[index];
-            return selection
+            var selectionArray = ["Rock", "Paper", "Scissors"];
+            selection = selectionArray[Math.floor(Math.random()* 3)];
+            return selection;
         }
 
-        const computerSelection = computerPlay();
-
-        function rockPaperScissors( playerSelection, computerSelection) {
+        function rockPaperScissors(playerSelection, computerSelection) {
             if (playerSelection == computerSelection) {
                 return ('TIE! Player chose ' + playerSelection + ' and Computer chose ' + computerSelection);
             } else if (playerSelection == "Rock" && computerSelection == "Scissors" || playerSelection == "Paper" &&
@@ -30,6 +27,11 @@
                 return; 
             }  
         };     
+
+        const playerSelection = "Paper";
+        const computerSelection = computerPlay();
+        console.log(rockPaperScissors(playerSelection, computerSelection))
+
     </script>
 </body>
 </html>
